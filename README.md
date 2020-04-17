@@ -58,3 +58,8 @@ If you click Log In on the navbar you get taken to the Log In page.
 This page is just a regular Log In page.
 
 
+seedDB() Function
+====================================
+There is a sdatabase seeder or seedDB() function that runs everytime the server restarts.
+This  function deletes all old data and fills in the database with all default data. 
+
