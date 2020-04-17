@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+<% if((error && error.length > 0) || (success && success.length > 0) || (warning && warning.length > 0)){ %>
+<%  var margin = 0;%>
+<% } else{%>
+<% var margin = 10;%>
+<%}%>
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: <%=margin%>%">
+    <main role="main" class="inner cover">
+      <div class="row">
+        <h1 class="cover-heading logo">Park App</h1>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: 2.5%; width:75%;font-size: 1.5em; margin: 2.5% auto;">
+    <p>
+      Park App is a site for people to view beautiful parks around the neighborhood.
+      This helps people see the activities occuring at there parks on a regular basis,
+      and assists is a platform to help assist in the process of the rental of a
+      park facility.
+    </p>
+    <p>
+      Park App is just a demo and not real. Do not take any information on this site
+      and regard it as a fact. All Parks are made up as well as rent value, and location.
+    </p>
+  </div>
+</div>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,46 @@
+<%- include("partials/header"); -%>
+<% if((error && error.length > 0) || (success && success.length > 0) || (warning && warning.length > 0)){ %>
+<%  var margin = 0;%>
+<% } else{%>
+<% var margin = 10;%>
+<%}%>
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: <%=margin%>%">
+    <main role="main" class="inner cover">
+      <div class="row">
+        <h1 class="cover-heading logo">Sign Up</h1>
+      </div>
+    </main>
+  </div>
+</div>
+<br>
+<div class="container form-style">
+  <form action="/register" method="post">
+    <div class="form-row justify-content-center mb-3">
+      <h4 class="col-sm-12 secondary-text-navy">Display Name:</h4>
+      <input id="displayName" type="text" class="form-control col-sm-12" name= "displayName"; placeholder="Mike, Mike123, etc." required>
+    </div>
+
+    <div class="form-row justify-content-center mb-3">
+      <h4 class="col-sm-12 secondary-text-navy">Email:</h4>
+      <input id="email" type="email" class="form-control col-sm-12" name= "username"; placeholder="Email" required>
+    </div>
+
+    <div class="form-row justify-content-center mb-3">
+      <h4 class="col-sm-12 secondary-text-navy">Password:</h4>
+      <input id="password" type="password" class="form-control col-sm-12" name= "password"; placeholder="Password" required>
+    </div>
+
+    <div class="form-row justify-content-center mb-3">
+      <h4 class="col-sm-12 secondary-text-navy"> Confirm Password:</h4>
+      <input id="confirmpassword" type="password" class="form-control col-sm-12" name= "confirmPassword"; placeholder="Password" required>
+    </div>
+
+    <div class="form-row float-right mb-3">
+      <div class="col-sm-12 input-group-append">
+        <button type="submit" class="btn btn-info pl-md-3 pr-md-3 pl-xl-4 pr-xl-4 pt-md-0 pb-md-1 secondary-text-pacifico" >Sign Me Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<%- include("partials/footer"); -%>

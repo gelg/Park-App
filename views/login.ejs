@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+<% if((error && error.length > 0) || (success && success.length > 0) || (warning && warning.length > 0)){ %>
+<%  var margin = 0;%>
+<% } else{%>
+<% var margin = 10;%>
+<%}%>
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: <%=margin%>%">
+    <main role="main" class="inner cover">
+      <div class="row">
+        <h1 class="cover-heading logo">Log In</h1>
+      </div>
+    </main>
+  </div>
+</div>
+<br>
+<div class="container form-style">
+  <form action="/login" method="post">
+    <div class="form-row justify-content-center">
+      <h4 class="col-sm-12 secondary-text-navy">Email:</h4>
+      <input id="email" type="email" class="form-control col-sm-12" name= "username"; placeholder="Email">
+    </div>
+    <br>
+    <div class="form-row justify-content-center">
+      <h4 class="col-sm-12 secondary-text-navy">Password:</h4>
+      <input id="password" type="password" class="form-control col-sm-12" name= "password"; placeholder="Password">
+    </div>
+    <br>
+    <div class="form-row float-right">
+      <div class="col-sm-12 input-group-append">
+        <button type="submit" class="btn btn-info pl-md-3 pr-md-3 pl-lg-4 pr-lg-4 pt-md-0 pb-md-1 secondary-text-pacifico">Log In</button>
+      </div>
+    </div>
+</div>
+<%- include("partials/footer"); -%>

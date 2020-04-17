@@ -1,0 +1,28 @@
+<%- include ("partials/header"); -%>
+<% if((error && error.length > 0) || (success && success.length > 0) || (warning && warning.length > 0)){ %>
+<%  var margin = 10;%>
+<% } else{%>
+<% var margin = 20;%>
+<%}%>
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: <%=margin%>%">
+    <main role="main" class="inner cover">
+      <div class="row">
+        <h1 class="cover-heading logo">Park App</h1>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="container searchbar-margin">
+  <form action="/" method="get">
+    <div class="row justify-content-center">
+      <div class="container input-group ml-sm-3">
+          <input class="form-control d-flex" type="search" placeholder="Search" name="search"/>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-info pl-md-3 pr-md-3 pl-lg-5 pr-lg-5 secondary-text">Go</button>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>
+<%- include ("partials/footer"); -%>
