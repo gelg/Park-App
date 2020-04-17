@@ -1,0 +1,43 @@
+.logo
+{
+  font-family: 'Pacifico', cursive;
+  color: #00004f;
+}
+
+.form-style
+{
+  width: 60%;
+  margin: 0px auto;
+  margin-top: 2.5%;
+}
+
+.secondary-text
+{
+  font-family: 'Lobster', cursive;
+}
+
+.secondary-text-navy
+{
+  font-family: 'Lobster', cursive;
+  color: #00004f;
+}
+
+.secondary-text-pacifico
+{
+  font-family: 'Pacifico', cursive;
+}
+
+.title-top-margin
+{
+  margin-top: 10%;
+}
+
+.image
+{
+  width: 250px; height:200px
+}
+
+.searchbar-margin
+{
+  margin-top: 3.5%;
+}
