@@ -1,0 +1,1 @@
+Adding /public/js/ directory
