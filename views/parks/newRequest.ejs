@@ -1,0 +1,68 @@
+<%- include ("../partials/header"); -%>
+
+<div class="container">
+    <main role="main" class="inner cover">
+      <div class="row justify-content-center">
+        <h1 class="cover-heading mt-5 logo">New Park Request</h1>
+      </div>
+    </main>
+</div>
+
+<div class="container form-style">
+  <form action="/parks/newRequest" method="post">
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text">Park Name:</h4>
+      <input id="parkName" type="text" class="form-control col-sm-12" name= "name"; placeholder="Park Name">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text">Street Address:</h4>
+      <input id="streetAddress" type="text" class="form-control col-sm-12" name= "streetAddress"; placeholder="Street Address">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text-navy"> City:</h4>
+      <input id="city" type="text" class="form-control col-sm-12" name= "city"; placeholder="City">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text-navy"> State:</h4>
+      <input id="state" type="text" class="form-control col-sm-12" name= "state"; placeholder="State">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text-navy"> Zip Code:</h4>
+      <input id="zipcode" type="text" class="form-control col-sm-12" name= "zipcode"; placeholder="Zip Code">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text-navy"> Images:</h4>
+      <input id="images" type="text" class="form-control col-sm-12" name= "images"; placeholder="Image urls">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text-navy"> Description:</h4>
+      <input id="description" type="text" class="form-control col-sm-12" name= "description"; placeholder="Description">
+    </div>
+
+    <div class="form-row justify-content-center mb-3">
+      <h4 class="col-lg-2 col-md-4 col-sm-6 secondary-text-navy"> Rentable:</h4>
+      <input id="rentable" type="checkbox" class="form-control col-lg-1 col-md-2 col-sm-6" name="rentable">
+    </div>
+
+    <div class="form-row justify-content-center mb-5">
+      <h4 class="col-sm-12 secondary-text-navy"> Rent Range:</h4>
+      <input id="rentRange" type="text" class="form-control col-sm-12" name= "rentRange"; placeholder="Rent Range">
+    </div>
+
+    <div class="form-row float-right">
+      <div class="col-sm-12 mb-5">
+        <button type="submit" class="btn btn-info pl-md-3 pr-md-3 pl-lg-4 pr-lg-4 pt-md-0 pb-md-1 secondary-text-pacifico">Add</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<%- include ("../partials/footer"); -%>

@@ -1,0 +1,81 @@
+<%- include ("../partials/header"); -%>
+<% if((error && error.length > 0) || (success && success.length > 0) || (warning && warning.length > 0)){ %>
+<%  var margin = 0;%>
+<% } else{%>
+<% var margin = 7;%>
+<%}%>
+  <div class="container" style="margin-top: <%=margin%>%">
+      <main role="main" class="inner cover">
+        <div class="row justify-content-center text-center">
+          <h1 class="cover-heading col-xl-12 logo"> <%=park.name%> </h1>
+          <h4 class="cover-heading col-xl-12 secondary-text-navy" > <%= park.author %> </h4>
+          <h4 class="cover-heading col-xl-12 secondary-text-navy" > <%=park.city%>, <%=park.state%> </h4>
+          <h6 class="cover-heading col-xl-12 secondary-text-navy" > <span class="mr-2">Street Address: <%=park.streetAddress%></span> <span> ZipCode: <%=park.zipcode%></span></h6>
+        </div>
+      </main>
+  </div>
+
+  <div class="container mt-3 form-style">
+    <div class="row flex justify-content-center text-center">
+      <div class="">
+        <p><%=park.description%></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3 mb-3">
+    <div class="row flex text-center">
+      <% park.images.forEach(function(image){%>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="thumbnail">
+            <img src="<%= image %>" class="image rounded" >
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <% if(!user){ %>
+      <div class="row text-center flex justify-content-center mb-3">
+        <p class= "col-xl-4" >In order to be able to edit or delete a park you must be logged in and
+           you must also be the one who added this park.</p>
+      </div>
+    <% }else{%>
+      <%  if(user._id == park.userId){ %>
+        <div class="row flex justify-content-center mb-3">
+          <a href="/parks/<%=park._id%>/edit"><button class="col-xl-12 btn-info btn content-center mr-5 secondary-text" type="button"  name="button">Edit Park</button></a>
+          <form action="/parks/<%=park._id%>?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-danger ml-5 secondary-text"> Delete Park</button>
+          </form>
+        </div>
+      <% } %>
+    <% } %>
+    <div class="row  justify-content-center flex text-center">
+      <h4 class="col-xl-12 mb-3 secondary-text-navy"> Reviews </h4>
+    </div>
+    <div class="row flex justify-content-center mb-3">
+      <a href="/parks/<%=park._id%>/reviews/new"><button class="col-xl-12 btn-info btn content-center secondary-text" type="button"   name="button">Add Review</button></a>
+    </div>
+    <div class="row justify-content-center flex text-center">
+      <% park.reviews.forEach(function(review){%>
+        <div class="container col-md-6 col-lg-4 mb-3">
+          <div class="thumbnail border rounded-lg p-1 image">
+            <h5 class="secondary-text">  <%=review.author%>  </h5>
+            <h6><%=review.rating%> / 10</h6>
+            <p><%=review.reason%></p>
+            <% if(!user){ %>
+            <% }else{ %>
+              <%  if(user._id == review.userId){ %>
+                <form action="/parks/<%=park._id%>/reviews/<%=review._id%>?_method=DELETE" method="post">
+                  <button type="submit" class="btn btn-danger pl-md-3 pr-md-3 pl-lg-4 pr-lg-4 pt-md-0 pb-md-1 secondary-text"> Delete Review</button>
+                </form>
+              <% } %>
+            <% } %>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+<%- include ("../partials/footer"); -%>
